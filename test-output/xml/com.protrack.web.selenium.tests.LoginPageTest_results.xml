@@ -4,14 +4,22 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="7.510">
+<<<<<<<<< Temporary merge branch 1
+           time="8.176">
+=========
+           time="6.199">
+>>>>>>>>> Temporary merge branch 2
     <properties></properties>
 
 
 
             <testcase
                 name="loginWithValidCredentials"
-                time="7.510"
+<<<<<<<<< Temporary merge branch 1
+                time="8.176"
+=========
+                time="6.199"
+>>>>>>>>> Temporary merge branch 2
                 classname="com.protrack.web.selenium.tests.LoginPageTest">
             </testcase>
 </testsuite>

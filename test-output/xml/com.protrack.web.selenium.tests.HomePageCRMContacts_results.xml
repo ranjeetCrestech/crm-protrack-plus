@@ -4,29 +4,47 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="89.406">
+<<<<<<<<< Temporary merge branch 1
+           time="65.737">
+=========
+           time="65.978">
+>>>>>>>>> Temporary merge branch 2
     <properties></properties>
 
 
 
             <testcase
+<<<<<<<<< Temporary merge branch 1
+                name="Contact_Management_001"
+                time="20.025"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+            <testcase
                 name="Contact_Management_002"
-                time="33.469"
+                time="35.026"
+=========
+                name="Contact_Management_002"
+                time="32.709"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_005"
-                time="21.488"
+                time="5.575"
+>>>>>>>>> Temporary merge branch 2
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_004"
-                time="10.377"
+<<<<<<<<< Temporary merge branch 1
+                time="10.686"
+=========
+                time="10.495"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_001"
-                time="24.072"
+                time="17.199"
+>>>>>>>>> Temporary merge branch 2
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
 </testsuite>
