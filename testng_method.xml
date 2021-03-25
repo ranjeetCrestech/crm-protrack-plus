@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.protrack.web.selenium.listeners.CustomListeners"/>
+            <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+
+
+    <test  name="protrack" preserve-order="true">
+        <parameter name = "browser" value = "chrome" />
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <exclude name="sanity" />
+            </run>
+        </groups>
+            <classes>
+
+
+                <class name="com.protrack.web.selenium.tests.LoginPageTest">
+                <methods>
+                    <include name="loginWithValidCredentials" />
+                </methods>
+                </class>
+                <class name="com.protrack.web.selenium.tests.HomePageCRMTest">
+                    <methods>
+                        <include name="Project_CRM_01" />
+                        <include name="Project_CRM_03" />
+<!--                        <include name="Project_CRM_05" />-->
+                    </methods>
+                </class>
+                <class name="com.protrack.web.selenium.tests.AddProjectInfoTest">
+                    <methods>
+<!--                        <include name="Project_CRM_08_023" />-->
+<!--                        <include name="Project_CRM_24" />-->
+<!--                        <include name="Project_CRM_21" />-->
+<!--                        <include name="Project_CRM_26" />-->
+<!--                        <include name="Project_CRM_27" />-->
+<!--                        <include name="Project_CRM_28" />-->
+<!--                        <include name="Project_CRM_34" />-->
+<!--                        <include name="Project_CRM_36" />-->
+<!--                        <include name="Project_CRM_37" />-->
+<!--                        <include name="Project_CRM_40" />-->
+<!--                        <include name="Project_CRM_41" />-->
+<!--                        <include name="Project_CRM_43" />-->
+<!--                        <include name="Project_CRM_44" />-->
+<!--                        <include name="Project_CRM_CRM_45" />-->
+<!--                        <include name="Project_CRM_CRM_46" />-->
+<!--                        <include name="Project_CRM_047" />-->
+<!--                        <include name="Project_CRM_048" />-->
+<!--                        <include name="Project_CRM_057" />-->
+<!--                        <include name="Project_CRM_058" />-->
+<!--                        <include name="Project_CRM_059" />-->
+<!--                        <include name="Project_CRM_060" />-->
+<!--                        <include name="Project_Module_061" />-->
+<!--                        <include name="Project_CRM_062" />-->
+<!--                        <include name="Project_CRM_066" />-->
+<!--                        <include name="Project_CRM_067" />-->
+<!--                        <include name="Project_CRM_72" />-->
+<!--                        <include name="Project_CRM_73" />-->
+<!--                        <include name="Project_CRM_074" />-->
+<!--                        <include name="Project_CRM_076" />-->
+<!--                        <include name="Project_CRM_080" />-->
+<!--                        <include name="Project_CRM_081" />-->
+<!--                        <include name="Project_CRM_082" />-->
+                        <include name="Project_CRM_083_090" />
+                        <include name="Project_CRM_091" />
+
+
+                    </methods>
+                </class>
+
+           </classes>
+      </test>
+</suite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.protrack.web.selenium.listeners.CustomListeners"/>
+            <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+
+
+    <test  name="protrack" preserve-order="true">
+        <parameter name = "browser" value = "chrome" />
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <exclude name="sanity" />
+            </run>
+        </groups>
+            <classes>
+                <class name="com.protrack.web.selenium.tests.LoginPageTest"/>
+                <class name="com.protrack.web.selenium.tests.HomePageCRMContacts"/>
+                <class name="com.protrack.web.selenium.tests.AddProjectInfoTest"/>
+                <class name="com.protrack.web.selenium.tests.EditPageTest"/>
+           </classes>
+      </test>
+</suite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="protrack"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="2"
+           time="0.000">
+    <properties></properties>
+
+
+            <testcase
+                name="Project_CRM_083_090"
+                time="0.0"
+                classname="com.protrack.web.selenium.tests.AddProjectInfoTest">
+            </testcase>
+            <testcase
+                name="Project_CRM_091"
+                time="0.0"
+                classname="com.protrack.web.selenium.tests.AddProjectInfoTest">
+            </testcase>
+
+</testsuite>

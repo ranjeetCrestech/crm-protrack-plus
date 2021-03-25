@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test1"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="63.306">
+    <properties></properties>
+
+
+
+            <testcase
+                name="Contact_Management_001"
+                time="16.954"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+            <testcase
+                name="Contact_Management_002"
+                time="35.722"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+            <testcase
+                name="Contact_Management_004"
+                time="10.630"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+</testsuite>
