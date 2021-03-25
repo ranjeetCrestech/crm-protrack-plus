@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="63.306">
+           time="65.737">
     <properties></properties>
 
 
 
             <testcase
                 name="Contact_Management_001"
-                time="16.954"
+                time="20.025"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_002"
-                time="35.722"
+                time="35.026"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_004"
-                time="10.630"
+                time="10.686"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
 </testsuite>

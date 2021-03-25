@@ -5,15 +5,13 @@ import com.protrack.web.selenium.utility.Waits;
 import net.bytebuddy.asm.Advice;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
-import java.util.Random;
+
 
 import static com.protrack.web.selenium.tests.BaseClass.chromeDriver;
 import static com.protrack.web.selenium.utility.GenericMethods.*;
@@ -83,7 +81,7 @@ public class AddContactsPO {
         softAssert.assertAll();
     }
 
-    public void VerifyContactDetailsinViewMode() throws InterruptedException {
+    public void verifyContactDetailsinViewMode() throws InterruptedException {
         //waitForElementClickable(homePagePO.contactsTab,30);
         //javascriptClick(homePagePO.contactsTab);
         waitForSearchResults();
@@ -94,5 +92,7 @@ public class AddContactsPO {
         softAssert.assertEquals(false,getContactGenralInfoPublicUneditableFormat.isSelected(),"Display Public Un-editable Format");
         softAssert.assertAll();
     }
+
+
 
 }
