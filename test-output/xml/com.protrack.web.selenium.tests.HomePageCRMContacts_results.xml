@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test1"
-           tests="3"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="63.306">
+           time="65.978">
     <properties></properties>
 
 
 
             <testcase
-                name="Contact_Management_001"
-                time="16.954"
+                name="Contact_Management_002"
+                time="32.709"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
-                name="Contact_Management_002"
-                time="35.722"
+                name="Contact_Management_005"
+                time="5.575"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_004"
-                time="10.630"
+                time="10.495"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+            <testcase
+                name="Contact_Management_001"
+                time="17.199"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
 </testsuite>

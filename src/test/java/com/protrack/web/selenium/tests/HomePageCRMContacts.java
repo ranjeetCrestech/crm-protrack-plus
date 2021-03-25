@@ -34,10 +34,14 @@ class HomePageCRMContacts extends BaseClass{
     }
     @Test
     public void Contact_Management_004() throws InterruptedException {
-        addContactsPO.VerifyContactDetailsinViewMode();
+        addContactsPO.verifyContactDetailsinViewMode();
         waitForSearchResults();
         Assert.assertTrue(addContactsPO.getContactGeneralInfoLabelHeader.getText().contains("General Information"),"General Information Header is displayed");
         System.out.println(" User get the General Information display in View Mode ");
+    }
+    @Test
+    public void Contact_Management_005() throws InterruptedException {
+        addContactsPO.verifyOneTabToAnothertabWithinTheContacts();
     }
 
 }

@@ -5,7 +5,6 @@ import com.protrack.web.selenium.utility.Waits;
 import net.bytebuddy.asm.Advice;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +12,7 @@ import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
-import java.util.Random;
+
 
 import static com.protrack.web.selenium.tests.BaseClass.chromeDriver;
 import static com.protrack.web.selenium.utility.GenericMethods.*;
@@ -61,8 +60,28 @@ public class AddContactsPO {
     @FindBy(xpath = "//span[@aria-owns='eddnVisibility_listbox']")
     public WebElement getContactGenralInfoPublicUneditableFormat;
 
-    @FindBys({@FindBy(xpath = "//div[@class='project-detail-tab']/ul/li")})
-    public List<WebElement> contactTabToTabNavigation;
+    /*@FindBys({@FindBy(xpath = "//div[@id='project1']/div[3]/ul/li")})
+    public List<WebElement> contactTabToTabNavigation;*/
+    @FindBy(xpath = "//a[normalize-space()='General Information']")
+    public WebElement clkContactGeneralInfoTab;
+
+    @FindBy(xpath = "//a[normalize-space()='Project Information']")
+    public WebElement clkContactProjectInfoTab;
+
+    @FindBy(xpath="//table[@id='tblContactProjectGrid']/thead/tr/th[1]")
+    public WebElement getContactProjectGridText;
+
+    @FindBy(xpath ="//a[normalize-space()='Resources']")
+    public WebElement clkContactResourcesTab;
+
+    @FindBy(xpath = "//table[@id='tblDocumentList']/thead/tr/th[1]")
+    public WebElement getContactResourcesDocumentText;
+
+    @FindBy(xpath = "//a[normalize-space()='Interaction Notes']")
+    public WebElement clkContactInteractionNTab;
+
+    @FindBy(xpath = "//table[@id='tblInteractionNotesGrid']/thead/tr/th[1]")
+    public WebElement getcontactInteractionnotesGrid;
 
     public void verifyContactPageByClickingONArrowPrimaryContact() throws InterruptedException {
         waitForElementClickable(clkOncontactToProjectTab,20);
@@ -79,20 +98,31 @@ public class AddContactsPO {
         waitForElementClickable(clickOnContactPrimeContactnextArrow,20);
         javascriptClick(clickOnContactPrimeContactnextArrow);
         waitForSearchResults();
-        softAssert.assertTrue(actual.contains(getContactGeneralInfoPrimarycontactName.getAttribute("innerText")),"Primary Contact Name Does Not Match with General Information of First Name");
-        softAssert.assertAll();
+        Assert.assertTrue(actual.contains(getContactGeneralInfoPrimarycontactName.getAttribute("innerText")),"Primary Contact Name Does Not Match with General Information of First Name");
+
     }
 
-    public void VerifyContactDetailsinViewMode() throws InterruptedException {
+    public void verifyContactDetailsinViewMode() throws InterruptedException {
         //waitForElementClickable(homePagePO.contactsTab,30);
         //javascriptClick(homePagePO.contactsTab);
         waitForSearchResults();
-        softAssert.assertEquals(false,getContactGeneralInfoFirstnameUneditableFormat.isEnabled(),"Display First Name Un-editable Format");
-        softAssert.assertEquals(false,getContactGeneralInfoLastNameUneditableFormat.isEnabled(),"Display Last Name Un-editable Format");
-        softAssert.assertEquals(false,getContactGeneralInfoJobTitleUneditableFormat.isEnabled(),"Display Job Title Un-editable Format");
-        softAssert.assertEquals(false,getContactgeneralinfoCompanyUneditableFormat.isSelected(),"Display Company Name Un-editable Format");
-        softAssert.assertEquals(false,getContactGenralInfoPublicUneditableFormat.isSelected(),"Display Public Un-editable Format");
-        softAssert.assertAll();
+        Assert.assertEquals(false,getContactGeneralInfoFirstnameUneditableFormat.isEnabled(),"Display First Name Un-editable Format");
+        Assert.assertEquals(false,getContactGeneralInfoLastNameUneditableFormat.isEnabled(),"Display Last Name Un-editable Format");
+        Assert.assertEquals(false,getContactGeneralInfoJobTitleUneditableFormat.isEnabled(),"Display Job Title Un-editable Format");
+        Assert.assertEquals(false,getContactgeneralinfoCompanyUneditableFormat.isSelected(),"Display Company Name Un-editable Format");
+        Assert.assertEquals(false,getContactGenralInfoPublicUneditableFormat.isSelected(),"Display Public Un-editable Format");
     }
+   public void verifyOneTabToAnothertabWithinTheContacts() throws InterruptedException {
+   waitForElementClickable(clkContactGeneralInfoTab,20);
+   javascriptClick(clkContactGeneralInfoTab);
+   Assert.assertTrue(getContactGeneralInfoLabelHeader.getText().contains("General Information"),"General Information Header is displayed");
+   waitForSearchResults();
+   waitForElementClickable(clkContactProjectInfoTab,20);
+   javascriptClick(clkContactProjectInfoTab);
+
+
+   }
+
+
 
 }
