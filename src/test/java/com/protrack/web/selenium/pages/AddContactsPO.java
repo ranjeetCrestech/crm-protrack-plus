@@ -115,13 +115,23 @@ public class AddContactsPO {
    public void verifyOneTabToAnothertabWithinTheContacts() throws InterruptedException {
    waitForElementClickable(clkContactGeneralInfoTab,20);
    javascriptClick(clkContactGeneralInfoTab);
-   Assert.assertTrue(getContactGeneralInfoLabelHeader.getText().contains("General Information"),"General Information Header is displayed");
    waitForSearchResults();
+   Assert.assertTrue(getContactGeneralInfoLabelHeader.getText().contains("General Information"),"General Information Header is Displayed");
    waitForElementClickable(clkContactProjectInfoTab,20);
    javascriptClick(clkContactProjectInfoTab);
-
-
+   waitForSearchResults();
+   Assert.assertTrue(getContactProjectGridText.getText().contains("Project Name"),"Project Information Tab Project Name is  Displayed");
+   waitForElementClickable(clkContactResourcesTab,20);
+   javascriptClick(clkContactResourcesTab);
+   waitForSearchResults();
+   Assert.assertTrue(getContactResourcesDocumentText.getText().contains("Section"),"Resources Tab Section is Displayed in Resource Document List");
+   waitForElementClickable(clkContactInteractionNTab,20);
+   javascriptClick(clkContactInteractionNTab);
+   waitForSearchResults();
+   Assert.assertTrue(getcontactInteractionnotesGrid.getText().contains("Date"),"Interaction Notes Tab Date column is Not Displayed in Interaction Notes");
    }
+
+
 
 
 

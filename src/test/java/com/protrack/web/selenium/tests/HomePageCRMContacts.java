@@ -37,11 +37,12 @@ class HomePageCRMContacts extends BaseClass{
         addContactsPO.verifyContactDetailsinViewMode();
         waitForSearchResults();
         Assert.assertTrue(addContactsPO.getContactGeneralInfoLabelHeader.getText().contains("General Information"),"General Information Header is displayed");
-        System.out.println(" User get the General Information display in View Mode ");
+        System.out.println(" User get the Contacts Details display in View Mode ");
     }
     @Test
     public void Contact_Management_005() throws InterruptedException {
         addContactsPO.verifyOneTabToAnothertabWithinTheContacts();
+        System.out.println("User Navigate From One Tab to Another Tab Within Contacts Module");
     }
 
 }
