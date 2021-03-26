@@ -13,7 +13,7 @@ public class StaticContext {
         StaticContext.projectTitle = projectTitle;
     }
     public static String getContactTitle() {
-        return projectTitle;
+        return contactTitle;
     }
     public static void setContactTitle(String contactTitle) {
         StaticContext.contactTitle = contactTitle;

@@ -293,7 +293,7 @@ public class AddContactsPO {
         waitForSearchResults();
         //addProjectPO.fillProjectData(projectDetails);
         System.out.println("--Add New Contact Data ---");
-        clickAndEnterText(contactTxtTitle, getContactTitle());
+        //clickAndEnterText(contactTxtTitle, getContactTitle());
         clickAndEnterText(contactTxtPrefix, contactDetails.get("Prefix"));
         clickAndEnterText(contactTxtFirstName, contactDetails.get("First_Name"));
         clickAndEnterText(contactTxtPhoneticFirstname, contactDetails.get("Phonetics_First_name"));
@@ -305,6 +305,8 @@ public class AddContactsPO {
         clickAndEnterText(contactTxtMaidenName, contactDetails.get("Maiden_Name"));
         clickAndEnterText(contactTxtSuffix, contactDetails.get("Suffix"));
         clickAndEnterText(contactTxtNickName, contactDetails.get("Nick_Name"));
+        clickAndEnterText(getContactGeneralInfoJobTitleUneditableFormat,contactDetails.get("Job_Title"));
+        clickAndEnterText(contactTxtDepartment,contactDetails.get("Department"));
         clickAndEnterText(contactTxtPhoneticCompanyName, contactDetails.get("Phonetic_Company_Name"));
         // clickAndEnterText(contactDropDownProject); dropdown Project
     }

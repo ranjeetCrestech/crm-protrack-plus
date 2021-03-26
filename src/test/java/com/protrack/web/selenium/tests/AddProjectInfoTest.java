@@ -14,7 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -286,9 +285,9 @@ public class AddProjectInfoTest extends BaseClass{
 
      @Test(groups = { "Regression" },priority=13)
     public void Project_CRM_37() throws InterruptedException {
-      Random rand = new Random();
-      Waits.waitForElement(chromeDriver,homePagePO.crmTab);
-     elementClick(homePagePO.crmTab);
+        Random rand = new Random();
+        Waits.waitForElement(chromeDriver,homePagePO.crmTab);
+        elementClick(homePagePO.crmTab);
         GenericMethods.waitForElementClickable(addProjectPO.contactsTab,20);
         elementClick(addProjectPO.contactsTab);
         waitForSearchResults();
@@ -299,11 +298,10 @@ public class AddProjectInfoTest extends BaseClass{
         elementClick(addProjectPO.ContactProjectInfoList.get(i));
         waitForElementClickable(addProjectPO.firstProjectInLHSGrid,30);
         Assert.assertEquals(projectNameToValidate,addProjectPO.firstProjectInLHSGrid.getText());
-      elementClick(addProjectPO.firstProjectInLHSGrid);
-      waitForSearchResults();
-
-     Assert.assertEquals(addProjectPO.firstProjectInLHSGrid.getText(),addProjectPO.contactProjectSelected.getText());
-      System.out.println("Project Details Page displayed on selecting the Contacts Project name in project grid");
+        elementClick(addProjectPO.firstProjectInLHSGrid);
+        waitForSearchResults();
+        Assert.assertEquals(addProjectPO.firstProjectInLHSGrid.getText(),addProjectPO.contactProjectSelected.getText());
+        System.out.println("Project Details Page displayed on selecting the Contacts Project name in project grid");
     }
 
     @Test(dataProvider = "ProjectBenefits_Investmentdata", groups = { "Regression" },priority=14)
@@ -802,7 +800,7 @@ public class AddProjectInfoTest extends BaseClass{
         clickAndEnterText(addProjectPO.addProjectURLNotes,projectDetails.get("URLNotes"));
         elementClick(addProjectPO.addProjectURLPlusIcon);
         waitForSearchResults();
-  Assert.assertTrue(addProjectPO.addProjectURLLabelText.getText().contains(projectDetails.get("URLDropDownHome")),projectDetails.get("URLDropDownHome"));
+        Assert.assertTrue(addProjectPO.addProjectURLLabelText.getText().contains(projectDetails.get("URLDropDownHome")),projectDetails.get("URLDropDownHome"));
         System.out.println("Project Tab  URL of type Home added successfully.");
     }
 

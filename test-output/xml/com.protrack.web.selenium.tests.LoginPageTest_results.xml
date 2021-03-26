@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="6.629">
+           time="7.838">
     <properties></properties>
 
 
 
             <testcase
                 name="loginWithValidCredentials"
-                time="6.629"
+                time="7.838"
                 classname="com.protrack.web.selenium.tests.LoginPageTest">
             </testcase>
 </testsuite>
