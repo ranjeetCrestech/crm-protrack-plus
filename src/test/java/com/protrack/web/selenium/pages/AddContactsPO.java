@@ -10,11 +10,10 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
+import java.util.HashMap;
 import java.util.List;
-
-
 import static com.protrack.web.selenium.tests.BaseClass.chromeDriver;
+import static com.protrack.web.selenium.tests.StaticContext.getContactTitle;
 import static com.protrack.web.selenium.utility.GenericMethods.*;
 
 public class AddContactsPO {
@@ -24,6 +23,7 @@ public class AddContactsPO {
     AddProjectPO addProjectPO = new AddProjectPO(chromeDriver);
     HomePagePO homePagePO = new HomePagePO(chromeDriver);
     SoftAssert softAssert=new SoftAssert();
+
     public AddContactsPO(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -59,9 +59,7 @@ public class AddContactsPO {
 
     @FindBy(xpath = "//span[@aria-owns='eddnVisibility_listbox']")
     public WebElement getContactGenralInfoPublicUneditableFormat;
-
-    /*@FindBys({@FindBy(xpath = "//div[@id='project1']/div[3]/ul/li")})
-    public List<WebElement> contactTabToTabNavigation;*/
+    //Navigation One Tab To Another Tab
     @FindBy(xpath = "//a[normalize-space()='General Information']")
     public WebElement clkContactGeneralInfoTab;
 
@@ -82,6 +80,162 @@ public class AddContactsPO {
 
     @FindBy(xpath = "//table[@id='tblInteractionNotesGrid']/thead/tr/th[1]")
     public WebElement getcontactInteractionnotesGrid;
+
+    //Add New Contacts
+    @FindBy(id="Title")
+    public WebElement contactTxtTitle;
+
+    @FindBy(id="Prefix")
+    public WebElement contactTxtPrefix;
+
+    @FindBy(id="FirstName")
+    public  WebElement contactTxtFirstName;
+
+    @FindBy(id="PhoneticFirstName")
+    public WebElement contactTxtPhoneticFirstname;
+
+    @FindBy(id="PronunciationFirstName")
+    public WebElement contactTxtPronunciationFirstName;
+
+    @FindBy(id="MiddleName")
+    public WebElement contactTxtMiddleName;
+
+    @FindBy(id="LastName")
+    public WebElement contactTxtLastName;
+
+    @FindBy(id="PhoneticLastName")
+    public  WebElement contactTxtPhoneticLastName;
+
+    @FindBy(id="PronunciationLastName")
+    public WebElement contactTxtPronunciationLastName;
+
+    @FindBy(id="MaidenName")
+    public WebElement contactTxtMaidenName;
+
+    @FindBy(id="Suffix")
+    public WebElement contactTxtSuffix;
+
+    @FindBy(id="NickName")
+    public WebElement contactTxtNickName;
+
+    @FindBy(id="JobTitle")
+    public WebElement contactTxtJobTitle;
+
+    @FindBy(id="Department")
+    public WebElement contactTxtDepartment;
+
+    @FindBys({@FindBy(xpath="companyDropdown")})
+    public List<WebElement> contactCompanydropDown;
+
+    @FindBy(id="PhoneticCompanyName")
+    public WebElement contactTxtPhoneticCompanyName;
+
+    @FindBy(xpath="project")
+    public WebElement contactDropDownProject;
+
+    @FindBy(xpath = "BirthDay")
+    public WebElement contactDropdownbirthDay;
+
+    @FindBy(xpath="Date")
+    public WebElement contacTdropDate;
+
+    @FindBy(id="txtContactDateNote")
+    public WebElement contactTxtNoteContactDateNote;
+
+    @FindBy(xpath="visibility")
+    public WebElement contactDropVisibility;
+
+    @FindBy(xpath = "tags-tokenfield")
+    public WebElement contactTxtTagsTokenfield;
+
+    @FindBy(id="ContactNotes")
+    public WebElement contactTxtContactNotes;
+
+    @FindBy(id="DummyField1")
+    public WebElement contactTxtDummyField1;
+
+    @FindBy(id="DummyField2")
+    public WebElement contactTxtDummyField2;
+
+    @FindBy(xpath = "//input[@id='DummyDate1']")
+    public WebElement contactTxtDummyDate1;
+
+    @FindBy(xpath = "//input[@id='DummyDate2']")
+    public WebElement contactTxtDummyDate2;
+
+    @FindBy(xpath = "//select[@id='ddnContactPhoneType']")
+    public WebElement  contactDropDownPhone;
+
+    @FindBy(id = "txtPhoneContactPhoneVal")
+    public WebElement contactTxtPhoneContactPhoneVal;
+
+    @FindBy(id="txtContactPhoneName")
+    public WebElement contactTxtContactPhoneName;
+
+    @FindBy(xpath = "//select[@id='ddnContactEmailType']")
+    public WebElement contactDropDownHome;
+
+    @FindBy(id="txtEmailContactEmailVal")
+    public WebElement contactTxtEmailContactEmailVal;
+
+    @FindBy(id="txtContactEmailName")
+    public WebElement contactTxtNotesContactEmailName;
+
+    @FindBy(id="ddnContactAddressType")
+    public WebElement contactTxtddnContactAddressType;
+
+    @FindBy(id="txtContactAddressName")
+    public WebElement contactTxtContactAddressName;
+
+    @FindBy(id="txtAddressContactAddressVal")
+    public WebElement contactTxtAddressContactAddressVal;
+
+    @FindBy(id="txtStreet2ContactAddressVal")
+    public WebElement contactTxtStreet2ContactAddressVal;
+
+    @FindBy(id="txtTownContactAddressVal")
+    public WebElement contactTxtTownContactAddressVal;
+
+    @FindBy(id="ddnAddressCountryList")
+    public WebElement contactDropAddressCountryList;
+
+    @FindBy(id="ddnAddressStateList")
+    public WebElement contactDropddnAddressStateList;
+
+    @FindBy(id="txtZipcodeContactAddressVal")
+    public WebElement contactTxtZipcodeContactAddressVal;
+
+    @FindBy(id="ddnContactURLType")
+    public WebElement contactDropddnContactURLType;
+
+    @FindBy(id="txtContactURLValue")
+    public WebElement contactTxtContactURLValue;
+
+    @FindBy(id="txtContactURLNote")
+    public WebElement contactTxtContactURLNote;
+
+    @FindBy(id="ddnContactSocialProfileType")
+    public WebElement contactDdnContactSocialProfileType;
+
+    @FindBy(id="txtContactSocialProfileVal")
+    public WebElement contactTxtContactSocialProfileVal;
+
+    @FindBy(id="txtContactSocialProfileName")
+    public WebElement contactTxtContactSocialProfileName;
+
+    @FindBy(id="ddnContactInstantMessengerType")
+    public WebElement contactDdnContactInstantMessengerType;
+
+    @FindBy(id="txtContactInstantMessengerVal")
+    public WebElement contactTxtContactInstantMessengerVal;
+
+    @FindBy(id="txtContactInstantMessengerName")
+    public WebElement contactTxtContactInstantMessengerName;
+
+    @FindBy(id="btnContactTabSave")
+    public WebElement contactClkONContactSubmitTButton;
+
+
 
     public void verifyContactPageByClickingONArrowPrimaryContact() throws InterruptedException {
         waitForElementClickable(clkOncontactToProjectTab,20);
@@ -131,8 +285,53 @@ public class AddContactsPO {
    Assert.assertTrue(getcontactInteractionnotesGrid.getText().contains("Date"),"Interaction Notes Tab Date column is Not Displayed in Interaction Notes");
    }
 
+    public void fillAddContactData(HashMap<String, String> contactDetails) throws InterruptedException {
+        GenericMethods.waitForElementClickable(addProjectPO.addNewButton, 20);
+        GenericMethods.javascriptClick(addProjectPO.addNewButton);
+        waitForSearchResults();
+        //addProjectPO.fillProjectData(projectDetails);
+        System.out.println("--Add New Contact Data ---");
+        clickAndEnterText(contactTxtTitle, getContactTitle());
+        clickAndEnterText(contactTxtPrefix, contactDetails.get("Prefix"));
+        clickAndEnterText(contactTxtFirstName, contactDetails.get("First_Name"));
+        clickAndEnterText(contactTxtPhoneticFirstname, contactDetails.get("Phonetics_First_name"));
+        clickAndEnterText(contactTxtPronunciationFirstName, contactDetails.get("Pronunciation_First_Name"));
+        clickAndEnterText(contactTxtMiddleName, contactDetails.get("Middle_Name"));
+        clickAndEnterText(contactTxtLastName, contactDetails.get("Last_Name"));
+        clickAndEnterText(contactTxtPhoneticLastName, contactDetails.get("Phonetic_Last_Name"));
+        clickAndEnterText(contactTxtPronunciationLastName, contactDetails.get("Pronunciation_Last_Name"));
+        clickAndEnterText(contactTxtMaidenName, contactDetails.get("Maiden_Name"));
+        clickAndEnterText(contactTxtSuffix, contactDetails.get("Suffix"));
+        clickAndEnterText(contactTxtNickName, contactDetails.get("Nick_Name"));
+        clickAndEnterText(contactTxtPhoneticCompanyName, contactDetails.get("Phonetic_Company_Name"));
+        // clickAndEnterText(contactDropDownProject); dropdown Project
+    }
+        public void fillDateData(HashMap <String, String> contactDetails){
 
+        }
+        public void fillCommunicationInformationData(HashMap<String, String> contactDetails) throws InterruptedException {
+          clickAndEnterText(contactTxtPhoneContactPhoneVal,contactDetails.get("Phone_number"));
+          clickAndEnterText(contactTxtContactPhoneName,contactDetails.get("Extension"));
+        }
+        public void fillEmailData(HashMap<String,String> contactDetails) throws InterruptedException {
+            //clickAndEnterText(dropDown);
+            clickAndEnterText(contactTxtContactAddressName,contactDetails.get("Alis"));
+            clickAndEnterText(contactTxtAddressContactAddressVal,contactDetails.get("Street_Address"));
+            clickAndEnterText(contactTxtStreet2ContactAddressVal,contactDetails.get("Street_Address2"));
+            clickAndEnterText(contactTxtTownContactAddressVal,contactDetails.get("Town_City"));
+            //clickAndEnterText(); DropDown
+            clickAndEnterText(contactTxtZipcodeContactAddressVal,contactDetails.get("Zip_Code"));
+        }
+        public void fillUrlData(HashMap<String,String> contactDetails) throws InterruptedException {
+            clickAndEnterText(contactTxtContactURLValue,contactDetails.get("Url_Address"));
+            clickAndEnterText(contactTxtContactURLNote,contactDetails.get("Notes"));
+           //clickAndEnterText(contactTxt);
 
+        }
+        public void fillSocialProfile(HashMap<String,String> contactDetails)
+        {
+            clickAndEnterText();
+        }
 
 
 }

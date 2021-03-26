@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test1"
-           tests="4"
-           failures="0"
+           tests="5"
+           failures="1"
            errors="0"
            skipped="0"
-<<<<<<<<< Temporary merge branch 1
-           time="65.737">
-=========
-           time="65.978">
->>>>>>>>> Temporary merge branch 2
+           time="108.331">
     <properties></properties>
 
-
-
             <testcase
-<<<<<<<<< Temporary merge branch 1
                 name="Contact_Management_001"
-                time="20.025"
+                time="41.870"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
-            </testcase>
+
+            <failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h5[normalize-space()=&apos;General Information&apos;]&quot;}
+  (Session info: chrome=89.0.4389.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SSTSL1108&apos;, ip: &apos;192.168.43.227&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_281&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\SSTSL1~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57889}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 425a425931f32f8881be5116a70886a9
+*** Element info: {Using=xpath, value=//h5[normalize-space()=&apos;General Information&apos;]}">
+                <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h5[normalize-space()='General Information']"}
+  (Session info: chrome=89.0.4389.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SSTSL1108', ip: '192.168.43.227', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\SSTSL1~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57889}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 425a425931f32f8881be5116a70886a9
+*** Element info: {Using=xpath, value=//h5[normalize-space()='General Information']}
+                sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)java.lang.reflect.Constructor.newInstance(Constructor.java:423)org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)org.openqa.selenium.By$ByXPath.findElement(By.java:353)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)com.sun.proxy.$Proxy8.getText(Unknown Source)com.protrack.web.selenium.tests.HomePageCRMContacts.Contact_Management_001(HomePageCRMContacts.java:26)sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.lang.reflect.Method.invoke(Method.java:498)org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)java.util.ArrayList.forEach(ArrayList.java:1259)org.testng.TestRunner.privateRun(TestRunner.java:764)org.testng.TestRunner.run(TestRunner.java:585)org.testng.SuiteRunner.runTest(SuiteRunner.java:384)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)org.testng.SuiteRunner.run(SuiteRunner.java:286)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)org.testng.TestNG.runSuitesLocally(TestNG.java:1140)org.testng.TestNG.runSuites(TestNG.java:1069)org.testng.TestNG.run(TestNG.java:1037)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </failure>
+    </testcase>
+
+
             <testcase
                 name="Contact_Management_002"
-                time="35.026"
-=========
-                name="Contact_Management_002"
-                time="32.709"
-                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
-            </testcase>
-            <testcase
-                name="Contact_Management_005"
-                time="5.575"
->>>>>>>>> Temporary merge branch 2
+                time="34.577"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
                 name="Contact_Management_004"
-<<<<<<<<< Temporary merge branch 1
-                time="10.686"
-=========
-                time="10.495"
+                time="10.409"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
             <testcase
-                name="Contact_Management_001"
-                time="17.199"
->>>>>>>>> Temporary merge branch 2
+                name="Contact_Management_005"
+                time="21.474"
+                classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
+            </testcase>
+            <testcase
+                name="Contact_Management_006"
+                time="0.001"
                 classname="com.protrack.web.selenium.tests.HomePageCRMContacts">
             </testcase>
 </testsuite>
