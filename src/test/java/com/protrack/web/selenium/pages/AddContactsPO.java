@@ -9,12 +9,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import java.util.HashMap;
 import java.util.List;
 import static com.protrack.web.selenium.tests.BaseClass.chromeDriver;
 import static com.protrack.web.selenium.tests.StaticContext.getContactTitle;
 import static com.protrack.web.selenium.utility.GenericMethods.*;
+import static com.protrack.web.selenium.utility.ReadDataFromExcelFile.readExcel;
 
 public class AddContactsPO {
 
@@ -284,7 +287,6 @@ public class AddContactsPO {
    waitForSearchResults();
    Assert.assertTrue(getcontactInteractionnotesGrid.getText().contains("Date"),"Interaction Notes Tab Date column is Not Displayed in Interaction Notes");
    }
-
     public void fillAddContactData(HashMap<String, String> contactDetails) throws InterruptedException {
         GenericMethods.waitForElementClickable(addProjectPO.addNewButton, 20);
         GenericMethods.javascriptClick(addProjectPO.addNewButton);
@@ -328,10 +330,5 @@ public class AddContactsPO {
            //clickAndEnterText(contactTxt);
 
         }
-        public void fillSocialProfile(HashMap<String,String> contactDetails)
-        {
-            clickAndEnterText();
-        }
-
 
 }
