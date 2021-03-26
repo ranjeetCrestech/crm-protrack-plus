@@ -6,9 +6,13 @@ import com.protrack.web.selenium.pages.HomePagePO;
 import com.protrack.web.selenium.utility.GenericMethods;
 import com.protrack.web.selenium.utility.Waits;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+
 import static com.protrack.web.selenium.utility.GenericMethods.*;
+import static com.protrack.web.selenium.utility.ReadDataFromExcelFile.readExcel;
 import static com.protrack.web.selenium.utility.Waits.waitForElement;
 
 class HomePageCRMContacts extends BaseClass{
@@ -44,8 +48,16 @@ class HomePageCRMContacts extends BaseClass{
         addContactsPO.verifyOneTabToAnothertabWithinTheContacts();
         System.out.println("User Navigate From One Tab to Another Tab Within Contacts Module");
     }
-    @Test(groups = { "Regression" },alwaysRun = true, priority=4)
-    public void Contact_Management_006() {
 
-   }
+
+    @DataProvider(name="test-data")
+    public Object[][] readData() throws Exception {
+        Object [][] hashMapObj  = readExcel("C:\\Users\\SSTSL1108\\Desktop\\ProtrackPlusTestData.xlsx", "Test.xlsx", "Sheet1");
+        return hashMapObj;
+    }
+    @Test(dataProvider = "test-data", groups = { "Regression" },priority=23)
+    public void Contact_Management_006()
+    {
+
+    }
 }
