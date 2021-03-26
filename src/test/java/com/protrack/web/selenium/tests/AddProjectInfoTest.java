@@ -365,7 +365,6 @@ public class AddProjectInfoTest extends BaseClass{
         scrollPageToUp();
     }
 
-
  @Test(dataProvider = "ProjectBenefits_EmployementInfo", groups = { "Regression" },priority=16)
     public void Project_CRM_43(HashMap<String, String> projectDetails) throws InterruptedException {
 
@@ -446,7 +445,6 @@ public class AddProjectInfoTest extends BaseClass{
     waitForSearchResults();
     scrollPageToUp();
     }
-
 
    @Test(dataProvider = "test-data", groups = { "Regression" },dependsOnMethods = { "Project_CRM_CRM_45" },priority=19)
     public void Project_CRM_CRM_46(HashMap<String, String> projectDetails) throws InterruptedException {
