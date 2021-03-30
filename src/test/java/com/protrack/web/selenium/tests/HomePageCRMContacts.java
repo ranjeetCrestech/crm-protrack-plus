@@ -65,6 +65,7 @@ class HomePageCRMContacts extends BaseClass{
        executor.executeScript("document.getElementsByClassName('tab-content').scrollDown += 500");
        addContactsPO.fillCommunicationInformationData(contactDetails);
        addContactsPO.fillEmailData(contactDetails);
+       addContactsPO.fillAddressData(contactDetails);
        addContactsPO.fillUrlData(contactDetails);
     }
 }

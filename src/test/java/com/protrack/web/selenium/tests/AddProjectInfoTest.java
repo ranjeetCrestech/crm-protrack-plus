@@ -106,7 +106,6 @@ public class AddProjectInfoTest extends BaseClass{
        Assert.assertEquals(addProjectPO.getTagsTextLabelField.getText(),projectDetails.get("Tags_Text"));
         Assert.assertEquals(addProjectPO.getDateLabelField.getText(),projectDetails.get("Date_Field"));
        Assert.assertTrue(addProjectPO.getNotesLabelField.getText().contains("Testing Notes"));
-
         Assert.assertEquals(addProjectPO.getExtraNumField1.getAttribute("value"),projectDetails.get("Extra_Num_Field1"));
         Assert.assertEquals(addProjectPO.getExtraNumField2.getAttribute("value"),projectDetails.get("Extra_Num_Field2"));
         Assert.assertEquals(addProjectPO.getExtraNumField3.getAttribute("value"),projectDetails.get("Extra_Num_Field3"));
@@ -574,10 +573,9 @@ public class AddProjectInfoTest extends BaseClass{
         GenericMethods.waitForElementClickable(addProjectPO.addNewButton,20);
         GenericMethods.javascriptClick(addProjectPO.addNewButton);
         GenericMethods.waitForElementClickable(addProjectPO.projectNameTextField,30);
-        setProjectTitle("ProTest_"+ DateTimeUtil.getcurrentDateTime());
+        setProjectTitle("ProTest_" + DateTimeUtil.getcurrentDateTime());
         clickAndEnterText(addProjectPO.projectNameTextField,getProjectTitle());
         addProjectPO.fillEmailInformationData(projectDetails);
-
         GenericMethods.javascriptClick(addProjectPO.submitBtn);
         System.out.println("Multiple Emails can be added by clicking on the + Button");
        Assert.assertEquals(addProjectPO.EmailLabelValue.getText(),projectDetails.get("EmailIDField"));

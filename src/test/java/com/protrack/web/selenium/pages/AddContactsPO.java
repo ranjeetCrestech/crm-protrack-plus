@@ -1,5 +1,7 @@
 package com.protrack.web.selenium.pages;
 
+import com.protrack.web.selenium.tests.StaticContext;
+import com.protrack.web.selenium.utility.DateTimeUtil;
 import com.protrack.web.selenium.utility.GenericMethods;
 import com.protrack.web.selenium.utility.Waits;
 import net.bytebuddy.asm.Advice;
@@ -16,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import static com.protrack.web.selenium.tests.BaseClass.chromeDriver;
 import static com.protrack.web.selenium.tests.StaticContext.getContactTitle;
+import static com.protrack.web.selenium.tests.StaticContext.setProjectTitle;
 import static com.protrack.web.selenium.utility.GenericMethods.*;
 import static com.protrack.web.selenium.utility.ReadDataFromExcelFile.readExcel;
 
@@ -25,7 +28,7 @@ public class AddContactsPO {
     GenericMethods genericMethods = new GenericMethods();
     AddProjectPO addProjectPO = new AddProjectPO(chromeDriver);
     HomePagePO homePagePO = new HomePagePO(chromeDriver);
-    SoftAssert softAssert=new SoftAssert();
+    StaticContext staticContext=new StaticContext();
 
     public AddContactsPO(WebDriver driver) {
         this.driver = driver;
@@ -127,16 +130,25 @@ public class AddContactsPO {
     @FindBy(id="Department")
     public WebElement contactTxtDepartment;
 
-    @FindBys({@FindBy(xpath="companyDropdown")})
-    public List<WebElement> contactCompanydropDown;
+   // @FindBys({@FindBy(xpath="companyDropdown")})
+   // public List<WebElement> contactCompanydropDown;
+
+    @FindBy(xpath = "//div[@class='row Group 04']//span[@class='k-input'][normalize-space()='Select']")
+    public WebElement cotactCompanyDropDown;
+
+    @FindBy(xpath = "//div[@class='k-animation-container']//input[@role='listbox']")
+    public WebElement contactSearchCompanyName;
 
     @FindBy(id="PhoneticCompanyName")
     public WebElement contactTxtPhoneticCompanyName;
 
-    @FindBy(xpath="project")
+    @FindBy(xpath="//span[contains(@aria-owns,'ddlProjectName_listbox')]//span[contains(@class,'k-input')][normalize-space()='Select']")
     public WebElement contactDropDownProject;
 
-    @FindBy(xpath = "BirthDay")
+    @FindBy(xpath="//input[contains(@aria-owns,'ddlProjectName_listbox')]")
+    public  WebElement cotactSearchProjectName;
+
+    @FindBy(id ="ddnContactDateType")
     public WebElement contactDropdownbirthDay;
 
     @FindBy(xpath="Date")
@@ -245,8 +257,13 @@ public class AddContactsPO {
         javascriptClick(clkOncontactToProjectTab);
         waitForSearchResults();
         waitForElementClickable(addProjectPO.projectSearchBar, 20);
-        clearTextField(addProjectPO.projectSearchBar);
-        clickAndEnterText(addProjectPO.projectSearchBar, "Akka");
+        waitForSearchResults();
+
+       // clearTextField(addProjectPO.projectSearchBar);
+        waitForElementClickable(addProjectPO.projectSearchBar, 30);
+
+        clickAndEnterText(addProjectPO.projectSearchBar, "Ohm Test");
+
         waitForElementClickable(clkOnCreatedOnFirstProjectGrid, 30);
         elementClick(clkOnCreatedOnFirstProjectGrid);
         waitForSearchResults();
@@ -307,8 +324,14 @@ public class AddContactsPO {
         clickAndEnterText(contactTxtNickName, contactDetails.get("Nick_Name"));
         clickAndEnterText(getContactGeneralInfoJobTitleUneditableFormat,contactDetails.get("Job_Title"));
         clickAndEnterText(contactTxtDepartment,contactDetails.get("Department"));
+        clickAndSelect(cotactCompanyDropDown,contactSearchCompanyName,contactDetails.get("Company"));
         clickAndEnterText(contactTxtPhoneticCompanyName, contactDetails.get("Phonetic_Company_Name"));
         // clickAndEnterText(contactDropDownProject); dropdown Project
+        clickAndSelect(contactDropDownProject,cotactSearchProjectName,contactDetails.get("Project"));
+        genericMethods.validateElementSubStringText()
+       // staticContext.setContactTitle("ContTest_" + DateTimeUtil.getcurrentDateTime());
+        //clickAndSelect(contactDropdownbirthDay,);
+        selectDropdownElementByText(contactDropdownbirthDay,"Birthday");
     }
         public void fillDateData(HashMap <String, String> contactDetails){
 
@@ -318,7 +341,12 @@ public class AddContactsPO {
           clickAndEnterText(contactTxtContactPhoneName,contactDetails.get("Extension"));
         }
         public void fillEmailData(HashMap<String,String> contactDetails) throws InterruptedException {
-            //clickAndEnterText(dropDown);
+            clickAndEnterText(contactTxtEmailContactEmailVal,contactDetails.get("Email_Id"));
+            clickAndEnterText(contactTxtNotesContactEmailName,contactDetails.get("Email_Notes"));
+
+        }
+
+        public void fillAddressData(HashMap<String,String>contactDetails) throws InterruptedException {
             clickAndEnterText(contactTxtContactAddressName,contactDetails.get("Alis"));
             clickAndEnterText(contactTxtAddressContactAddressVal,contactDetails.get("Street_Address"));
             clickAndEnterText(contactTxtStreet2ContactAddressVal,contactDetails.get("Street_Address2"));

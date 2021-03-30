@@ -30,6 +30,7 @@ public class GenericMethods {
         actions.click();
         Thread.sleep(2000);
         actions.sendKeys(enterValue);
+        actions.sendKeys(enterValue);
         actions.pause(3000);
         actions.sendKeys(Keys.TAB);
         actions.pause(2000);
